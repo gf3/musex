@@ -1,0 +1,119 @@
+=border($border, $radius: 0px)
+  border: $border
+  +border-radius($radius)
+
+=sticky
+  position: -webkit-sticky
+  position: -moz-sticky
+  position: -ms-sticky
+  position: -o-sticky
+  position: sticky
+
+=sq($size)
+  width: $size
+  height: $size
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+
+  @-moz-keyframes #{$name}
+    @content
+
+  @-ms-keyframes #{$name}
+    @content
+
+  @keyframes #{$name}
+    @content
+
+=retina
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    @content
+
+=background-retina($name, $extension: ".png", $repeat: false, $position: false)
+  +image-background($name + $extension)
+  +retina
+    background-image: image-url(#{$name + "@2x" + $extension})
+  @if $repeat != false
+    background-repeat: $repeat
+  @if $position != false
+    background-position: $position
+
+=animation($animation)
+  -webkit-animation: $animation
+  -moz-animation: $animation
+  -ms-animation: $animation
+  -o-animation: $animation
+  animation: $animation
+
+=cursor-choice($value: auto)
+  cursor: $value
+  cursor: -moz-#{$value}
+  cursor: -webkit-#{$value}
+
+=calc($property, $expression)
+  #{$property}: -moz-calc(#{$expression})
+  #{$property}: -o-calc(#{$expression})
+  #{$property}: -webkit-calc(#{$expression})
+  #{$property}: calc(#{$expression})
+
+=replace-text-with($image)
+  text-indent: -99999px
+  background-image: image-url($image)
+
+=linear-background-gradient($start, $stop, $state: "standard")
+  @if $state == "standard"
+    +filter-gradient($start, $stop, vertical)
+    $experimental-support-for-svg: true
+    +background-image(linear-gradient(top, $start 0%, $stop 100%))
+  @if $state == "hover"
+    +filter-gradient(lighten($start, 3%), lighten($stop, 3%), vertical)
+    $experimental-support-for-svg: true
+    +background-image(linear-gradient(top, lighten($start, 3%) 0%, lighten($stop, 3%) 100%))
+  @if $state == "active"
+    +filter-gradient(darken($stop, 5%), darken($start, 8%), vertical)
+    $experimental-support-for-svg: true
+    +background-image(linear-gradient(top, darken($stop, 5%) 0%, darken($start, 8%) 100%))
+
+=linear-three-stop-background-gradient($start, $middle, $stop, $middlePercent: 50%)
+  +filter-gradient($start, $stop, vertical)
+  $experimental-support-for-svg: true
+  +background-image(linear-gradient(top, $start 0%, $middle $middlePercent, $stop 100%))
+
+=horizontal-linear-background-gradient($start, $middle, $stop, $middlePercent: 50%)
+  +filter-gradient($start, $stop, horizontal)
+  $experimental-support-for-svg: true
+  +background-image(linear-gradient(left, $start 0%, $middle $middlePercent, $stop 100%))
+
+
+=image-background($path)
+  background-image: image-url($path)
+  background-size: image-width($path) image-height($path)
+
+=image-size($path)
+  width: image-width($path)
+  height: image-height($path)
+
+=image-element($path)
+  display: block
+  +image-size($path)
+  +image-background($path)
+
+=retina-image-element($name, $extension: ".png")
+  display: block
+  +image-size($name + $extension)
+  +background-retina($name, $extension)
+
+// Custom Clearfix Helper. Use @extend .cf
+.cf:before, .cf:after
+  content: ""
+  display: table
+
+.cf:after
+  clear: both
+
+.cf
+  zoom: 1
+
+.wkfs
+  -webkit-font-smoothing: antialiased
