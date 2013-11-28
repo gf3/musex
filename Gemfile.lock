@@ -22,6 +22,12 @@ GIT
       listen (<= 0.9.9)
       sass (~> 3.2.5)
 
+GIT
+  remote: https://6772358f8749eca3d2340fd08910d36c821f9b89:x-oauth-basic@github.com/metalabdesign/exo.git
+  revision: 10ba4af3b34048baad15dd66f96fbc3187cbf19f
+  specs:
+    exo (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -56,6 +62,8 @@ GEM
     arel (4.0.1)
     atomic (1.1.14)
     awesome_print (1.2.0)
+    backbone-rails (1.0.0.1)
+      rails (>= 3.0.0)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -184,6 +192,7 @@ DEPENDENCIES
   active_model_serializers
   annotate (>= 2.5.0)
   awesome_print
+  backbone-rails
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)
@@ -191,6 +200,7 @@ DEPENDENCIES
   compass!
   compass-rails!
   database_cleaner!
+  exo!
   fabrication
   foreman
   haml-rails

@@ -11,8 +11,10 @@ gem 'compass-rails',           github: 'Compass/compass-rails', branch: 'rails4-
 gem 'haml-rails'
 gem 'handlebars_assets'
 gem 'hamlbars',                '~> 2.0'
+gem 'backbone-rails'
 gem 'sass-rails',              '~> 4.0.0'
 gem 'uglifier',                '>= 1.3.0'
+gem 'exo', git: 'https://6772358f8749eca3d2340fd08910d36c821f9b89:x-oauth-basic@github.com/metalabdesign/exo.git'
 
 group :doc do
   gem 'sdoc', require: false
