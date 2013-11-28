@@ -64,6 +64,7 @@ GEM
     awesome_print (1.2.0)
     backbone-rails (1.0.0.1)
       rails (>= 3.0.0)
+    bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -82,6 +83,12 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     debug_inspector (0.0.2)
+    devise (3.2.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (0.9.0)
     erubis (2.7.0)
@@ -106,6 +113,7 @@ GEM
       execjs (>= 1.2.9)
       sprockets (>= 2.0.3)
       tilt
+    hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.5)
     json (1.8.1)
@@ -117,6 +125,17 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.8.2)
+    oauth (0.4.7)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
+    omniauth-rdio (0.1.0)
+      omniauth-oauth (~> 1.0)
+    orm_adapter (0.5.0)
+    pg (0.17.0)
     polyglot (0.3.3)
     pry (0.9.12.4)
       coderay (~> 1.0)
@@ -183,6 +202,8 @@ GEM
     uglifier (2.3.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     yard (0.8.7.3)
 
 PLATFORMS
@@ -200,12 +221,16 @@ DEPENDENCIES
   compass!
   compass-rails!
   database_cleaner!
+  devise
   exo!
   fabrication
   foreman
   haml-rails
   hamlbars (~> 2.0)
   handlebars_assets
+  omniauth
+  omniauth-rdio
+  pg
   pry-rails
   rails (= 4.0.1)
   rspec-rails (~> 2.14)
