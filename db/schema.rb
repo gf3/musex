@@ -11,13 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128205719) do
+ActiveRecord::Schema.define(version: 20131129030617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "artists", force: true do |t|
+    t.string   "name"
+    t.string   "image_url"
+    t.string   "url"
+    t.string   "source"
+    t.string   "source_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "artists_users", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "artist_id"
+  end
+
+  create_table "relationships", force: true do |t|
+    t.integer  "followee_id"
+    t.integer  "follower_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["followee_id"], name: "index_relationships_on_followee_id", using: :btree
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",               default: "", null: false
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",       default: 0,  null: false
     t.datetime "current_sign_in_at"
@@ -30,8 +55,7 @@ ActiveRecord::Schema.define(version: 20131128205719) do
     t.json     "profile"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.hstore   "credentials",         default: {}, null: false
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
