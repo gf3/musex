@@ -1,2 +1,35 @@
 @import "compass"
 @import "mixins"
+@import "compass/reset"
+@import "globals"
+
+body
+  font-family: "Avenir Next", sans-serif
+  color: white
+  background: $blue
+
+  .container
+    max-width: 1000px
+    margin: 0 auto
+    padding: 0 20px
+
+header
+  padding: 20px 0
+  background: white
+  color: black
+  +pie-clearfix
+
+  h1
+    float: left
+    font:
+      weight: 400
+      size: 0em
+
+    span, strong
+      font-size: 3rem
+
+    strong
+      font-weight: 500
+
+#main
+  padding: 50px 0

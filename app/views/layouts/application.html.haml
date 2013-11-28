@@ -6,4 +6,13 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    = yield
+
+    %header
+      .container
+        %h1.logo
+          %span mu
+          %strong sex
+
+    #main
+      .container
+        = yield

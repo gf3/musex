@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/bundler/bundler/gems/exo-10ba4af3b340/app/assets/javascripts/exo/namespace.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;CAAA,KAAA,YAAA;;CAAA,CAAA,CAAa,CAAZ,CAAY,CAAA,GAAb;CACE,OAAA,wBAAA;CAAA,EAA4H,CAA5H,EAAyG,GAAS;AAArF,CAA7B,CAAC,CAAiE,EAAjB,CAAjD,CAAyB,EAA+D,EAA9D,EAA8D;MAAxF;CAAA,EACA,CAAA,EADA;CAEA;CAAA,QAAA,mCAAA;wBAAA;CAAA,EAAS,CAAO,EAAhB;CAAA,IAFA;CAGM,CAAQ,CAAd,EAAA,CAAA,KAAA;CAJF,EAAa;CAAb"
+}
