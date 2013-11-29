@@ -11,6 +11,8 @@
 //= require_tree ./plugins
 //= require greetings
 //= require view
+//= require_tree ./models
+//= require_tree ./collections
 //= require_tree ./views
 
 //= require main

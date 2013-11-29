@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/collections/UserList.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;CAAA,KAAA;oSAAA;;CAAA,CAAA,CAA+B,IAAA,EAA/B,UAAA;CAEE,GAAA,IAAA;CAAc,MAAD,IAAP;CAEJ;;;;;CAAA;;CAAA,EAAO,CAAP,CAAA,CAAmB;;CAAnB;;CAF6B,OAAQ;CAFzC,EAA+B;CAA/B"
+}
