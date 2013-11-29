@@ -1,0 +1,13 @@
+.main-content
+  .arrow
+  .avatar
+    %input{ class: "knob", readonly: "readonly", value: hb("matchPercentage") }
+    .image
+      %img{ src: '/assets/jason.png'}
+    .percentage
+  .text
+    .block.name= hb! 'textName'
+    .block.artists=hb! 'textArtist'
+    .block.recent=hb! 'textRecent'
+
+.extra-content

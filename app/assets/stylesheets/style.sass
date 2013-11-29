@@ -33,3 +33,113 @@ header
 
 #main
   padding: 50px 0
+  -webkit-font-smoothing: antialiased
+
+  h1
+    text-align: center
+    font:
+      size: 1.8em
+      weight: 400
+    margin-bottom: 40px
+
+  strong
+    font-weight: 700
+
+
+.matches-bin
+  .match
+    height: 210px
+    width: 100%
+    margin-bottom: 30px
+
+    &:hover
+      .arrow
+        +opacity(1)
+
+    .main-content
+      +pie-clearfix
+
+    .arrow
+      position: relative
+      +retina-image-element('arrow')
+      height: 210px
+      background:
+        repeat: no-repeat
+        position: left center
+      float: left
+      margin-right: 45px
+      +opacity(0)
+      +transition(opacity 200ms ease 0)
+
+    .text
+      font-size: 1.3em
+      line-height: 1.2em
+      padding-top: 20px
+
+      .block
+
+        &:first-letter
+          text-transform: capitalize
+
+        & + .block
+          margin-top: 15px
+
+        a
+          font-weight: 500
+          text-decoration: underline
+          +cursor-choice(pointer)
+
+    .avatar
+      position: relative
+      overflow: hidden
+      height: 205px
+      width: 205px
+      margin-right: 35px
+      float: left
+      +border-radius(999px)
+
+      div:first-child
+        z-index: 5
+        display: block !important
+        position: absolute
+
+      .background
+        display: block
+        position: absolute
+        left: 0
+        top: 102px
+        bottom: 0
+        right: 0
+        background: $pink
+        z-index: 5
+
+      .image
+        position: relative
+        z-index: 10
+        +border-radius(999px)
+        overflow: hidden
+        width: 195px
+        height: 195px
+        left: 5px
+        top: 5px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
