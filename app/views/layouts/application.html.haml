@@ -11,6 +11,9 @@
         %h1.logo
           %span mu
           %strong sex
+        - if user_signed_in?
+          .user= current_user.name
+          = link_to 'Sign Out', destroy_user_session_url, method: :delete
 
     #main
       .container
